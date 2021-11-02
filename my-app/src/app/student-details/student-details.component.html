@@ -1,0 +1,31 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center"> Student list</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-student-details-form></app-student-details-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th>Fullname:</th>
+                    <th>Address:</th>
+                    <th>Number phone:</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sts of service.list">
+                    <td>{{sts.fullName}}</td>
+                    <td>{{sts.address}}</td>
+                    <td>{{sts.numberPhone}}</td>
+                    <td> <a (click)="onRemove(sts.studentId)"><i class="fa fa-trash-alt fa-lg text-danger"></i></a></td>
+                    <td><a (click)="populateForm(sts)"><i class="fa fa-pencil fa-lg text-primary"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

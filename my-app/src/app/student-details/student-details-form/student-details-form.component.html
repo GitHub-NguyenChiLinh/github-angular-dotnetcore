@@ -1,0 +1,21 @@
+<form novalidate #form="ngForm"(submit) = "onSubmit(form)">
+    <input required type="hidden" name="studentId" [value]="service.formData.studentId" />
+    <div class="form-group">
+        <label> FULL NAME:</label>
+        <input required type="text" class="form-control form-control-lg" name="fullName" placeholder="Enter full name"
+            #fullName="ngModel" [(ngModel)]="service.formData.fullName">
+    </div>
+    <div class="form-group">
+        <label> ADDRESS:</label>
+        <input required type="text" class="form-control form-control-lg" name="address" placeholder="Enter your address"
+            #address="ngModel" [(ngModel)]="service.formData.address">
+    </div>
+    <div class="form-group">
+        <label>NUMBER PHONE:</label>
+        <input required type="number" class="form-control form-control-lg" name="numberPhone"
+            placeholder="Enter your number phone" #numberPhone="ngModel" [(ngModel)]="service.formData.numberPhone">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-block btn-lg" type="submit" [disabled]="form.invalid"> Submit </button>
+    </div>
+</form>
